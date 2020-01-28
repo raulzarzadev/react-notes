@@ -5,8 +5,8 @@
         "style": "Crawl",
         "subStyle": "Patada",
         "material": "Tabla",
-        "step": 12345,
-        "rest": 765,
+        "step": 9876,
+        "rest": 876,
         "coments": "este es un comentario aleatrio sobre esta misma serie",
         "shere": false,
 
@@ -35,8 +35,8 @@
         "style": "Dorso",
         "subStyle": "completo",
         "material": "sin",
-        "step": 12345,
-        "rest": 765,
+        "step": 587,
+        "rest": 6789,
         "coments": "este es un comentario  aleatrio sobre esta misma serie con mas o menos letras para revisar cuanto pueden escribir",
         "shere": false,
 

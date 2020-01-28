@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+
 import './App.css';
 
 //import tasks from './sample/tasks.json';
@@ -70,6 +71,7 @@ class App extends Component {
               <Timer series={this.state.series}/>
             </div>
           }}/>
+          
         </Router>
       </div>
     )
