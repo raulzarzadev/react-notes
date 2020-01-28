@@ -1,0 +1,47 @@
+[
+    {
+        "laps": 8,
+        "distance": 50,
+        "style": "Crawl",
+        "subStyle": "Patada",
+        "material": "Tabla",
+        "step": 12345,
+        "rest": 765,
+        "coments": "este es un comentario aleatrio sobre esta misma serie",
+        "shere": false,
+
+        "id":0,
+        "userId":"wsertyui765432wsdfg",
+        "teamId":"34rghu765rtyu76yui9" 
+    },
+    {
+        "laps": "12",
+        "distance": 100,
+        "style": "Maripa",
+        "subStyle": "Estirado",
+        "material": "Snorquel",
+        "step": 12345,
+        "rest": 765,
+        "coments": "",
+        "shere": true,
+
+        "id":1,
+        "userId":"wsertyui765432wsdfg",
+        "teamId":"34rghu765rtyu76yui9" 
+    },
+    {
+        "laps": "4",
+        "distance": 200,
+        "style": "Dorso",
+        "subStyle": "completo",
+        "material": "sin",
+        "step": 12345,
+        "rest": 765,
+        "coments": "este es un comentario  aleatrio sobre esta misma serie con mas o menos letras para revisar cuanto pueden escribir",
+        "shere": false,
+
+        "id": 2,
+        "userId":"wsertyui765432wsdfg",
+        "teamId":"34rghu765rtyu76yui9" 
+    }
+]

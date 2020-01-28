@@ -3,21 +3,30 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import './App.css';
 
-import tasks from './sample/tasks.json';
+//import tasks from './sample/tasks.json';
+import series from './sample/series'
 
 //--COMPONENTS
-import Tasks from './components/Tasks';
-import TaskForm from './components/TaskForm';
-import Posts from './components/Posts'
+//import Tasks from './components/Tasks';
+//import TaskForm from './components/TaskForm';
+import Home from './components/Home'
+import Timer from './components/Timer'
+
+//--BOOTSTRAP
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 //console.log(tasks)
 
+
 class App extends Component {
   state = {
-    tasks: tasks
+    series: series
   }
+  /* state = {
+    tasks: tasks
+  } */
 
-  addTask = (title, description) => {
+  /* addTask = (title, description) => {
     const newTask = {
       title: title,
       description: description,
@@ -27,17 +36,17 @@ class App extends Component {
       tasks: [...this.state.tasks, newTask]
     })
     console.log('Tarea agregada', newTask)
-  }
+  } */
 
-  deleteTask = id => {
+  /* deleteTask = id => {
     const newTasks = this.state.tasks.filter(tasks => tasks.id !== id)
     console.log(newTasks)
     this.setState({
       tasks: newTasks
     })
-  }
+  } */
 
-  checkDone = id => {
+  /* checkDone = id => {
     const newTasks = this.state.tasks.map(task => {
       if (task.id === id) {
         task.done = !task.done
@@ -45,15 +54,32 @@ class App extends Component {
       return task;
     });
     this.setState({ tasks: newTasks })
-  }
+  } */
 
   render() {
     return (
-      <div>
+      <div className="container">
         <Router>
           <Link to="/">Home</Link>
           <br/>
-          <Link to="/posts">Posts</Link>
+          <Link to="/timer">Start</Link>
+          
+          <Route exact path="/" component={Home} />
+          <Route path="/timer" render={() => {
+            return <div>
+              <Timer series={this.state.series}/>
+            </div>
+          }}/>
+        </Router>
+      </div>
+    )
+  }
+}
+
+export default App;
+
+/* 
+<br/>
           <Route exact path="/" render={() => {
             return <div>
               <TaskForm addTask={this.addTask} />
@@ -62,11 +88,5 @@ class App extends Component {
             </div>
           }}>
           </Route>
-          <Route path="/posts" component={Posts}/>
-        </Router>
-      </div>
-    )
-  }
-}
-
-export default App;
+          <Route path="/Start" component={Start}/>
+*/
