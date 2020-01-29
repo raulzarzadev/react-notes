@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import TimerLabel from 'react-compound-timer'
+//import TimerLabel from 'react-compound-timer'
+import Countdown from 'react-countdown'
 
 
 
@@ -9,7 +10,7 @@ import { faPlay, faStop, faStepForward, faStepBackward, faPause } from '@fortawe
 
 export default class Timer extends Component {
 
-    
+
 
     state = {
         serie: 0,
@@ -54,7 +55,7 @@ export default class Timer extends Component {
 
         if (this.state.lap > 0) {
             this.setState({ lap: this.state.lap - 1 })
-            
+
         } else {
             alert('Esta es la primera vuelta')
         }
@@ -72,7 +73,10 @@ export default class Timer extends Component {
 
 
 
+
     render() {
+
+
 
         const serie = this.props.series.filter(serie => serie.id === this.state.serie)[0]
         console.log(serie)
@@ -93,80 +97,61 @@ export default class Timer extends Component {
                         </strong>
                     </p>
                     <p className="crono">{serie.distance} <strong className="miniCrono">m</strong></p>
+
                     <div className="d-flex justify-content-around">
                         <p>{serie.subStyle}</p>
                         <p>{serie.style} </p>
                         <p>{serie.step}</p>
                     </div>
+                </div>
+                {/* ---TIMER STARTS--- */}
 
-                    {/* ---TIMER STARTS--- */}
 
+
+                <div >
+                    {/* --- COUNTER   --- */}
                     <div>
-                        
-                        <TimerLabel
-                            initialTime={serie.step}
-                            startImmediately={false}
-                            direction="backward"
-                            timeToUpdate='1'
-                                onStart={() => console.log('onStart hook')}
-                                onResume={() => console.log('onResume hook')}
-                                onPause={() => console.log('onPause hook')}
-                                onReset={() => console.log('onReset hook')}
-                        >
-                            {({ start, pause, reset, getTimerState, getTime }) => (
-                                <React.Fragment>
-                                    
-                                    <div className="crono">
-                                        <TimerLabel.Minutes /> :
-                                        <TimerLabel.Seconds /> 
-                                    </div>
-                                        <TimerLabel.Milliseconds />
-                                    <div>{getTimerState()}</div>
-                                    <br />
-                                    <div>
-                                        {/* BTN BACK */}
-                                        <button onClick={this.lapBackward} >
-                                            <Icon icon={faStepBackward} size="2x" />
-                                        </button>
-                                        
-                                        
-                                        {/* BTN RESET */}
-                                        <button onClick={reset}>
-                                            <Icon icon={faStop} size="2x"/>
-                                        </button>
-                                        {/* BTN PAUSE */}
-                                        <button onClick={pause}>
-                                            <Icon icon={faPause} size="2x" />
-                                        </button>
-                                        {/* BTN START */}
-                                        <button onClick={start}>
-                                            <Icon icon={faPlay} size="2x" />
-                                        </button> 
-
-                                            {/* BTN FARW */}
-                                        <button onClick={this.lapFarward} >
-                                            <Icon icon={faStepForward} size="2x" />
-                                        </button>
-
-                                    </div>
-                                </React.Fragment>
-                            )}
-                        </TimerLabel>
+                        <Countdown
+                            date={Date.now() + 10000}
+                            intervalDelay={0}
+                            autoStart={true}
+                            precision={1}
+                            renderer={props => <div>{props.total}</div>}
+                            onComplete={renderer=><p>termino</p>}
+                        />
                     </div>
 
+                    {/* -- BOX OF LAPS REPRODUCCIONS */}
+                    <div>
+
+                        {/* BTN BACK */}
+
+                        <button onClick={this.lapBackward} >
+                            <Icon icon={faStepBackward} size="2x" />
+                        </button>
 
 
+                        {/* BTN RESET */}
+                        <button onClick={'reset'}>
+                            <Icon icon={faStop} size="2x" />
+                        </button>
+                        {/* BTN PAUSE */}
+                        <button onClick={'pause'}>
+                            <Icon icon={faPause} size="2x" />
+                        </button>
+                        {/* BTN START */}
+                        <button onClick={'start'}>
+                            <Icon icon={faPlay} size="2x" />
+                        </button>
+
+                        {/* BTN FARW */}
+                        <button onClick={this.lapFarward} >
+                            <Icon icon={faStepForward} size="2x" />
+                        </button>
+                    </div>
 
                 </div>
 
-                {/* -- BOX OF LAPS REPRODUCCIONS */}
-
-                <div className="d-flex justify-content-around mt-3 rep-box" >
-
-
-
-
-                </div>
 
                 {/* --COMENTS BOX-- */}
 
