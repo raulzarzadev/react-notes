@@ -9,7 +9,7 @@ export default class Navigation extends Component {
         return (
             <Router>
                 <div>
-                    <nav classN="navbar navbar-dark bg-dark ">
+                    <nav className="navbar navbar-dark bg-dark ">
                         <div className="form-inline">
                             <div className="d-flex justify-content-around">
                                 <Link to="/" className="btn btn-outline-primary" >Home</Link>
