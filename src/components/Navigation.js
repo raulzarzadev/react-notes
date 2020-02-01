@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+
+
 import TimerDisplay from './TimerDisplay';
 import Home from './Home'
 
@@ -9,13 +11,9 @@ export default class Navigation extends Component {
         return (
             <Router>
                 <div>
-                    <nav className="navbar navbar-dark bg-dark ">
-                        <div className="form-inline">
-                            <div className="d-flex justify-content-around">
-                                <Link to="/" className="btn btn-outline-primary" >Home</Link>
-                                <Link to="/entrenador" className="btn btn-outline-secondary">Entrenador</Link>
-                            </div>
-                        </div>
+                    <nav className="navbar navbar-dark bg-dark d-flex justify-content-around ">
+                        <Link to="/" className="btn btn-outline-primary" >Home</Link>
+                        <Link to="/entrenador" className="btn btn-outline-secondary">Entrenador</Link>
                     </nav>
                 </div>
                 <Route path="/" exact component={Home} />

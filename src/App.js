@@ -5,6 +5,7 @@ import './App.css';
 
 //--COMPONENTS
 import Navigation from './components/Navigation'
+import Footer from './components/Footer'
 
 //--BOOTSTRAP
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -17,6 +18,7 @@ class App extends Component {
     return (
       <div >
         <Navigation/>
+        <Footer/>
       </div>
     )
   }
