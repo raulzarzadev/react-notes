@@ -44,5 +44,80 @@
         "id": 2,
         "userId":"wsertyui765432wsdfg",
         "teamId":"34rghu765rtyu76yui9" 
+    },
+    {
+        "laps": "1",
+        "distance": 1500,
+        "style": "Croll",
+        "subStyle": "completo",
+        "material": "sin",
+        "step": 7654,
+        "rest": 0,
+        "coments": "si vas muy lento usa aletas",
+        "shere": false,
+
+        "id": 7,
+        "userId":"wsertyui765432wsdfg",
+        "teamId":"34rghu765rtyu76yui9" 
+    },
+    {
+        "laps": "5",
+        "distance": 50,
+        "style": "Maripa",
+        "subStyle": "Completo",
+        "material": "Aletas",
+        "step": 587,
+        "rest": 6789,
+        "coments": "25 completo 25 solo patada",
+        "shere": false,
+
+        "id": 3,
+        "userId":"wsertyui765432wsdfg",
+        "teamId":"34rghu765rtyu76yui9" 
+    },
+    {
+        "laps": "8",
+        "distance": 100,
+        "style": "Pecho",
+        "subStyle": "Estirado",
+        "material": "sin",
+        "step": 76543,
+        "rest": 0,
+        "coments": "sin comentarios",
+        "shere": false,
+
+        "id": 4,
+        "userId":"wsertyui765432wsdfg",
+        "teamId":"34rghu765rtyu76yui9" 
+    },
+    {
+        "laps": "4",
+        "distance": 200,
+        "style": "Combi",
+        "subStyle": "completo",
+        "material": "sin",
+        "step": 87654,
+        "rest": 6789,
+        "coments": "Con salidas y vueltas",
+        "shere": false,
+
+        "id": 5,
+        "userId":"wsertyui765432wsdfg",
+        "teamId":"34rghu765rtyu76yui9" 
+    },
+    {
+        "laps": "4",
+        "distance": 100,
+        "style": "Combi",
+        "subStyle": "patada",
+        "material": "tabla",
+        "step": 34567,
+        "rest": 6789,
+        "coments": "",
+        "shere": false,
+
+        "id": 6,
+        "userId":"wsertyui765432wsdfg",
+        "teamId":"34rghu765rtyu76yui9" 
     }
 ]

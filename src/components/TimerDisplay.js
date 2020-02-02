@@ -25,14 +25,18 @@ export default class TimerDisplay extends Component {
             id: res.series
         };
 
-        const getSeries = multiFilter(seriesDB, filters)
-       this.setState({series: getSeries})
+       const getSeries = multiFilter(seriesDB, filters)
+       this.setState({
+           series: getSeries,
+           title: res.title,
+           coments: res.coments
+        })
+       
         
     }
 
     state = {
         id: parseInt(this.props.match.params.id),
-        entrenosDB: entrenosDB,
         series: '',
         serieIndex: 0,
         lapIndex: 0,
@@ -111,6 +115,9 @@ export default class TimerDisplay extends Component {
 
                     <Link  to="/workouts" className="btn btn-primary m-2">Ver Entrenos</Link>
                     </div>
+        <h4>{this.state.title}</h4>
+        <p className="text-muted">{this.state.coments}</p>
+
                     <div className="d-flex justify-content-center">
                         <button className="btn" onClick={this.prevSerie} ><Icon icon={faFastBackward} size="3x" /></button>
                         <p>Serie: <br /> <strong className="strong-countdown">{iSerie + 1} </strong > de <strong className="strong-countdown"> {series.length}</strong> </p>

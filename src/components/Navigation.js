@@ -23,7 +23,7 @@ export default class Navigation extends Component {
                         {/* <Link to="/newSerie" className="btn btn-outline-primary m-2">Crear Serie</Link> */}
                         {/* <Link to="/addSerie" className="btn btn-outline-primary m-2">Agregar Serie</Link> */}
                         {/* <Link to="/newWorkout" className="btn btn-outline-primary m-2">Crear Entreno</Link> */}
-                        <Link to="/workouts" className="btn btn-outline-primary m-2">Ver Entrenos</Link>
+                        {/* <Link to="/workouts" className="btn btn-outline-primary m-2">Ver Entrenos</Link> */}
                         <Link to="/calendar" className="btn btn-outline-primary m-2">Calendario</Link> 
                     </nav>
                 </div>

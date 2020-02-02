@@ -6,8 +6,8 @@ export default class Home extends Component {
         
         return (
             <div className="container text-center">
-                <h1 className="m-5">
-                    Series Programadas
+                <h1 className="my-5">
+                    Entrenamientos Programados
                 </h1>
                 <Workouts/>
             </div>

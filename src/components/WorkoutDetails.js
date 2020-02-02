@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 import SerieList from './SeriesList'
 
@@ -41,6 +42,7 @@ export default class WorkoutDetails extends Component {
 
                 <SerieList series={getSeries} />
                 <p>Creado: hace 1 día</p>
+                <Link to={"/entrenador/" + res.id}  class="btn btn-primary btn-lg m-4" >Iniciar entreno</Link>
             </div>
         )
     }

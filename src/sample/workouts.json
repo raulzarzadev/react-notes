@@ -24,7 +24,26 @@
         "date": "Sat Feb 01 2020 22:19:43 GMT-0700",
         "coments": "Estos son los coemtarios sobre EL ENTRENAMIENTO que deberian ser visuales y estar en un string en un lugar visible",
         "series": [
-            0,1,2
+            7,3,1
+        ]
+    },
+    {
+        "id": 3,
+        "title": " Entreno Navideño",
+        "date": "Sat Feb 01 2020 22:19:43 GMT-0700",
+        "coments": "sin",
+        "series": [
+            4
+        ]
+    },
+    {
+        "id": 4,
+        "title": " Entrenamiento no 4",
+        "date": "Sat Jun 01 2019 22:19:43 GMT-0700",
+        "coments": "Estos son los coemtarios sobre EL ENTRENAMIENTO Id 4",
+        "series": [
+            1,2,3,4,5,6
         ]
     }
+    
 ]
