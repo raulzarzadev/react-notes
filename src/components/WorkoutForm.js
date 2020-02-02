@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+
 
 export default class WorkoutForm extends Component {
     render() {
@@ -12,25 +14,26 @@ export default class WorkoutForm extends Component {
                             <input type="email" className="form-control" id="inputEmail3" placeholder="Titulo del entreno" />
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="inputPassword3" className="col-sm-2 col-form-label">Fecha:</label>
-                        <div className="col-sm-10">
-                            <input type="text" className="form-control" id="inputPassword3" placeholder="Entreno empieza el" />
+                    <div class="row">
+                        <div className="col" style={dateForm}>
+
+                            <label for="inputPassword3" className="col-sm-2 col-form-label" style={dateForm}>Fecha:</label>
+                            <div className="col-sm-10" >
+                                <input type="date" className="form-control" id="inputPassword3" />
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group row">
-                        <label for="inputPassword3" className="col-sm-2 col-form-label">Comentarios</label>
-                        <div className="col-sm-10">
-                            <textarea className="form-control" id="inputPassword3" placeholder="¿Comentarios o intrucciones extra?" />
+
+                        <div className="col" style={timeForm} >
+                            <label for="inputPassword3" className="col-sm-2 col-form-label" >Hora:</label>
+                            <div className="col-sm-10">
+                                <input type="time" className="form-control" id="inputPassword3" placeholder="Entreno a las" />
+                            </div>
                         </div>
                     </div>
 
-                    <div className="form-group row">
-                        <div className="col-sm-10">
-                            <button type="submit" className="btn btn-primary">Agregar Otra Serie</button>
-                        </div>
-                    </div>
 
+
+                    <h2>Series Programadas</h2>
                     <table class="table table-sm">
                         <thead>
                             <tr>
@@ -61,10 +64,22 @@ export default class WorkoutForm extends Component {
                             </tr>
                         </tbody>
                     </table>
+                    <div className="form-group row">
+                        <div className="col-sm-10">
+                            <Link to="/addSerie" className="btn btn-success " >Agregar Otra Serie</Link>
+                        </div>
+                    </div>
+
+                    <div className="form-group row">
+                        <label for="inputPassword3" className="col-sm-2 col-form-label">Comentarios</label>
+                        <div className="col-sm-10">
+                            <textarea className="form-control" id="inputPassword3" placeholder="¿Comentarios o intrucciones extra?" />
+                        </div>
+                    </div>
 
                     <div className="form-group row">
                         <div className="col-sm-10">
-                            <button type="submit" className="btn btn-primary btn-lg">Guardar Entrenamiento</button>
+                            <Link to="/workouts" className="btn btn-primary btn-lg">Guardar Entrenamiento</Link>
                         </div>
                     </div>
 
@@ -73,4 +88,12 @@ export default class WorkoutForm extends Component {
             </div >
         )
     }
+}
+
+const dateForm = {
+    minWidth: "200px"
+}
+
+const timeForm = {
+    maxWidth: "200px"
 }

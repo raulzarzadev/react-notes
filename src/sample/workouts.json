@@ -1,0 +1,30 @@
+[
+    {
+        "id": 0,
+        "date": "Sat Feb 01 2020 22:19:43 GMT-0700",
+        "title": "Titulo del entrenamiento para ser facilmente reconocido",
+        "coments": "Estos son los coemtarios sobre EL ENTRENAMIENTO que deberian ser visuales y estar en un string en un lugar visible",
+        "series": [
+            2,0,1
+        ]
+    },
+    {
+        "id": 1,
+        "title": "titulo de entreno con id 1",
+
+        "date": "Sat Feb 10 2020 22:19:43 GMT-0700",
+        "coments": "Estos son los coemtarios sobre EL ENTRENAMIENTO que deberian ser visuales y estar en un string en un lugar visible",
+        "series": [
+            1,2
+        ]
+    },
+    {
+        "id": 2,
+        "title": " id 2 TITULO DEL ENTRENO",
+        "date": "Sat Feb 01 2020 22:19:43 GMT-0700",
+        "coments": "Estos son los coemtarios sobre EL ENTRENAMIENTO que deberian ser visuales y estar en un string en un lugar visible",
+        "series": [
+            0,1,2
+        ]
+    }
+]

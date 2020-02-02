@@ -1,21 +1,46 @@
 import React, { Component } from 'react'
 import NewCountdown from './NewCountdown'
+import { Link } from 'react-router-dom';
+
 
 import { FontAwesomeIcon as Icon } from '@fortawesome/react-fontawesome'
 import { faStepForward, faStepBackward, faFastForward, faFastBackward } from '@fortawesome/free-solid-svg-icons'
 
 import seriesDB from '../sample/series.json'
+import entrenosDB from '../sample/workouts.json'
 
 
 export default class TimerDisplay extends Component {
 
+    componentWillMount(){
+        const res = entrenosDB.filter(workout => workout.id === this.state.id)[0]
+
+        function multiFilter(array, filters) {
+            let filterKeys = Object.keys(filters);
+            return array.filter((item) => filterKeys.every((key) => (filters[key].indexOf(item[key]) !== -1)));
+        }
+
+        let filters =
+        {
+            id: res.series
+        };
+
+        const getSeries = multiFilter(seriesDB, filters)
+       this.setState({series: getSeries})
+        
+    }
 
     state = {
-        series: seriesDB,
+        id: parseInt(this.props.match.params.id),
+        entrenosDB: entrenosDB,
+        series: '',
         serieIndex: 0,
         lapIndex: 0,
         step: 0,
     }
+
+    
+
 
 
 
@@ -27,8 +52,10 @@ export default class TimerDisplay extends Component {
             this.setState({ serieIndex: this.state.serieIndex + 1 })
             this.setState({ lapIndex: 0 })
             console.log('siguente serie')
+            console.log(this.state.entrenosDB)
         } else {
             console.log('ultima serie')
+            alert('EL entrenamiento termino')
         }
     }
 
@@ -48,6 +75,7 @@ export default class TimerDisplay extends Component {
         console.log(laps[this.state.serieIndex])
         if (this.state.lapIndex > laps[this.state.serieIndex] - 2) {
             console.log('ultima vuelta')
+            this.nextSerie()
         } else {
             this.setState({ lapIndex: this.state.lapIndex + 1 })
             console.log('siguiente vuelta')
@@ -59,6 +87,9 @@ export default class TimerDisplay extends Component {
             console.log('primera vuelta')
         } else {
             this.setState({ lapIndex: this.state.lapIndex - 1 })
+            console.log('vuelta anterior')
+            
+
         }
     }
 
@@ -69,16 +100,18 @@ export default class TimerDisplay extends Component {
     /* ----- RENDER HERE ---- */
 
     render() {
-
-        const series = this.state.series
         const iSerie = this.state.serieIndex
         const iLap = this.state.lapIndex
-
+        const series = this.state.series
+        
         return (
             <div className="container">
                 <div className="card-body text-center">
+                    <div className="d-flex justify-content-between my-3">
 
-                    <div className="d-flex justify-content-between">
+                    <Link  to="/workouts" className="btn btn-primary m-2">Ver Entrenos</Link>
+                    </div>
+                    <div className="d-flex justify-content-center">
                         <button className="btn" onClick={this.prevSerie} ><Icon icon={faFastBackward} size="3x" /></button>
                         <p>Serie: <br /> <strong className="strong-countdown">{iSerie + 1} </strong > de <strong className="strong-countdown"> {series.length}</strong> </p>
                         <button className="btn" onClick={this.nextSerie} ><Icon icon={faFastForward} size="3x" /></button>

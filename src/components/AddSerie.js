@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class AddSerie extends Component {
     render() {
@@ -10,7 +11,7 @@ export default class AddSerie extends Component {
                         <br />
 
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlSelect2"><h3>creadas por ti</h3></label>
+                            <label htmlFor="exampleFormControlSelect2"><h3>Creadas por ti</h3></label>
                             <select multiple className="form-control" id="exampleFormControlSelect2">
                                 <option>Serie comleta quese muestra hace 1 minto</option>
                                 <option>Serie comleta quese muestra hace 1 minto</option>
@@ -22,7 +23,7 @@ export default class AddSerie extends Component {
                         </div>
                         <br /><br />
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlSelect2"><h3>creadas por la comunidad</h3></label>
+                            <label htmlFor="exampleFormControlSelect2"><h3>Creadas por la comunidad</h3></label>
                             <select multiple className="form-control" id="exampleFormControlSelect2">
                                 <option>Serie comleta quese muestra hace 1 minto</option>
                                 <option>Serie comleta quese muestra hace 1 minto</option>
@@ -32,7 +33,8 @@ export default class AddSerie extends Component {
                                 <option>Serie comleta quese muestra hace 1 minto</option>
                             </select>
                         </div>
-                        <button className="btn btn-primary btn-block my-4">Agregar al Entrenamiento</button>
+                        <Link to="/newSerie">Crear una serie Nueva</Link>
+                        <Link to="/newWorkout" className="btn btn-primary btn-block my-4">Agregar al Entreno</Link>
                     </div>
                 </form>
             </div>

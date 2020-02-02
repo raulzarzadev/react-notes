@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class SerieForm extends Component {
     render() {
@@ -76,8 +77,7 @@ export default class SerieForm extends Component {
                             <label className="form-check-label" htmlFor="gridCheck">
                                 Compartir con la comunidad
                                 </label>
-                            <button type="submit" className="btn btn-primary btn-lg btn-block my-4">Guardar serie</button>
-                        </div>
+                            <Link to="/addSerie" className="btn btn-primary btn-lg btn-block my-4">Guardar serie</Link>                        </div>
                     </div>
                 </form>
             </div>
