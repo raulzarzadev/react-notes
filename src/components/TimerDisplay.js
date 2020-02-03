@@ -12,8 +12,9 @@ import entrenosDB from '../sample/workouts.json'
 
 export default class TimerDisplay extends Component {
 
-    componentWillMount(){
+    componentWillMount() {
         const res = entrenosDB.filter(workout => workout.id === this.state.id)[0]
+
 
         function multiFilter(array, filters) {
             let filterKeys = Object.keys(filters);
@@ -25,14 +26,13 @@ export default class TimerDisplay extends Component {
             id: res.series
         };
 
-       const getSeries = multiFilter(seriesDB, filters)
-       this.setState({
-           series: getSeries,
-           title: res.title,
-           coments: res.coments
+        const getSeries = multiFilter(seriesDB, filters)
+        this.setState({
+            series: getSeries,
+            title: res.title,
+            coments: res.coments
         })
-       
-        
+
     }
 
     state = {
@@ -43,7 +43,7 @@ export default class TimerDisplay extends Component {
         step: 0,
     }
 
-    
+
 
 
 
@@ -92,10 +92,12 @@ export default class TimerDisplay extends Component {
         } else {
             this.setState({ lapIndex: this.state.lapIndex - 1 })
             console.log('vuelta anterior')
-            
+
 
         }
     }
+
+    
 
 
 
@@ -107,16 +109,16 @@ export default class TimerDisplay extends Component {
         const iSerie = this.state.serieIndex
         const iLap = this.state.lapIndex
         const series = this.state.series
-        
+
         return (
             <div className="container">
                 <div className="card-body text-center">
                     <div className="d-flex justify-content-between my-3">
 
-                    <Link  to="/workouts" className="btn btn-primary m-2">Ver Entrenos</Link>
+                        <Link to="/workouts" className="btn btn-primary m-2">Ver Entrenos</Link>
                     </div>
-        <h4>{this.state.title}</h4>
-        <p className="text-muted">{this.state.coments}</p>
+                    <h4>{this.state.title}</h4>
+                    <p className="text-muted">{this.state.coments}</p>
 
                     <div className="d-flex justify-content-center">
                         <button className="btn" onClick={this.prevSerie} ><Icon icon={faFastBackward} size="3x" /></button>
@@ -131,13 +133,13 @@ export default class TimerDisplay extends Component {
                     </div>
                     <p>{series[iSerie].coments}</p>
                 </div>
-                <div className="text-center">
-                    <div className="d-flex justify-content-around ">
+                <div className="text-center my-5">
+                    <div className="d-flex justify-content-center ">
                         <button className="btn btn-primary" onClick={this.prevLap}><Icon icon={faStepBackward} size="2x" /></button>
-                        <p>Vuelta: <br /> <strong className="strong-countdown">{iLap + 1} </strong> de <strong className="strong-countdown">{series[iSerie].laps}</strong></p>
+                        <p className="mx-5">Vuelta: <br /> <strong className="strong-countdown">{iLap + 1} </strong> de <strong className="strong-countdown">{series[iSerie].laps}</strong></p>
                         <button className="btn btn-primary" onClick={this.nextLap}><Icon icon={faStepForward} size="2x" /></button>
                     </div>
-                    <NewCountdown />
+                    <NewCountdown/>
                 </div>
 
             </div>
